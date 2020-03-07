@@ -1,0 +1,10 @@
+
+# Redirect to index
+
+RewriteEngine on
+RewriteCond %{REQUEST_URI} !^/$
+
+#RewriteCond %{REQUEST_URI} !\.(gif|jpe?g|png|css|js)$
+RewriteCond %{REQUEST_FILENAME} !-f
+
+RewriteRule .* index.html [L]
