@@ -53,7 +53,7 @@
                     @change="setValueInFila($event, index)">
                 </td>
                 <td class="text-center">
-                  <button class="btn btn-danger" @click="fila.pop()">X</button>
+                  <button class="btn btn-danger" @click="removeRow">X</button>
                 </td>
               </tr>
             </tbody>
@@ -164,6 +164,11 @@ export default {
     addRow: function() {
       this.fila.push(parseFloat(this.new_row));
       this.new_row = 0;
+      this.estado_final = [];
+    },
+
+    removeRow: function() {
+      this.fila.pop();
       this.estado_final = [];
     },
 
